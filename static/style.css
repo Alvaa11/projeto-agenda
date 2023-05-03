@@ -353,7 +353,7 @@ body{
 }
 
 .btn-enviar a{
-    font-style: none;
+    text-decoration: none;
     color: #fff;
 }
 
