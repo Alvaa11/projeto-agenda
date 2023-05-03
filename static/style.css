@@ -1,0 +1,413 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,200;1,300&display=swap');
+
+
+:root{
+    --cor1: #C49CE6;
+    --cor2: #A89FFC;
+    --cor3: #FC9FFB;
+    --cordefundo: #042940;
+}
+
+body{
+    background-color: var(--cordefundo);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-image: linear-gradient(to bottom, var(--cor1), var(--cor2));
+    box-shadow: .5px .5px 4px #000;
+    width: 100%;
+    height: 240px;
+}
+
+.nav h1{
+    padding: 20px 30px;
+    font-size: 3rem;
+    font-style: italic;
+    text-align: center;
+}
+
+.nav p{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.nav .nav-list{
+    display: flex;
+    list-style: none; 
+    padding-right: 20px;   
+}
+
+.nav .list-item button{
+    margin-left: 25px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    text-decoration:none ;
+    font-size: 1.3rem;
+    color: #000;
+    background-color: transparent;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.nav .list-item button.active,
+.nav .list-item button:hover{
+    font-size: 1.5rem;
+    background-color: var(--cor1);
+}
+
+.box-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin: 20px auto;
+    width: 80%;
+    height: 600px;
+    border: 5px solid var(--cor3);
+    border-radius: 10px;
+    transform: scale(0);
+}
+
+.box-text .icon-box-txt{
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-bottom-left-radius: 10px;
+    padding: 5px;
+    font-size: 2rem;
+    background-color: var(--cor2);
+    cursor: pointer;
+}
+
+.box-text .txt{
+    position: absolute;
+    width: 70%;
+    color: #fff;
+    text-align: justify;
+    transition: .5s ease;
+    transform: scaleY(0);
+}
+
+.box-text .icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.box-text .txt h1{
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+.box-text .txt p{
+    font-size: 20px;
+}
+
+
+
+/* Quando clicar no link */
+.box-text.active,
+.box-text .txt.entrevistas.active, 
+.box-text .txt.podcast.active, 
+.box-text .txt.gravaçoes.active,
+.box-text .txt.perso.active{
+    transform: scaleY(1);
+} 
+
+/* estilo do botão */
+.box-text .txt.entrevistas button,
+.box-text .txt.gravaçoes button{
+    position: absolute;
+    bottom: -35%;
+    right: -30px;
+    padding: 15px;
+    border: 1px solid #000;
+    background-color: #5544ff;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 100;
+    letter-spacing: 1.1px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.box-text .txt.perso button{
+    position: absolute;
+    bottom: -85%;
+    right: -30px;
+    padding: 15px;
+    border: 1px solid #000;
+    background-color: #5544ff;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 100;
+    letter-spacing: 1.1px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.box-text .txt.podcast button{
+    position: absolute;
+    bottom: -45%;
+    right: -30px;
+    padding: 15px;
+    border: 1px solid #000;
+    background-color: rgba(60, 60, 253, 0.726);
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 100;
+    letter-spacing: 1.1px;
+    color: #fff;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.box-text .txt.podcast button:hover,
+.box-text .txt.perso button:hover,
+.box-text .txt.entrevistas button:hover,
+.box-text .txt.gravaçoes button:hover{
+    background-color: #5544ff;
+}
+
+
+/* responsividade barra de navegação e box-text */
+@media (max-width: 1100px){
+    .nav{
+        padding: 20px;
+        height: 300px;
+        transition: .3s ease;
+    }
+
+    .nav-item .nav-list{
+        display: flex;
+    }
+
+    .nav .list-item{
+        margin: 10px;
+        font-size: 25px;
+    }
+
+   
+    .nav.active{
+        display: block;
+        padding: 20px;
+        height: 300px;
+    }
+    
+   
+}
+
+@media (max-width: 850px){
+    
+    .nav{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 500px;
+    }
+
+    .nav button{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-item .nav-list{
+        display:block;
+        position: static;
+    }
+
+    .box-text{
+        height: 800px;
+    }
+
+}
+
+@media (max-width: 588px){
+    
+    .nav{
+        width: 100%;
+        height: 550px;
+    }
+
+
+    .nav-item button{
+        display:flex;
+        position: static;
+    }
+
+    .box-text{
+        height: 910px;
+    }
+
+    .box-text .txt h1{
+        font-size: 2.5rem;
+    }
+
+}
+
+@media (max-width: 476px){
+    .nav .nav-item h1{
+        font-size: 2.3rem;
+    }
+    
+    .box-text .txt h1{
+        font-size: 2rem;
+    }
+
+    .box-text .txt.entrevistas button,
+    .box-text .txt.podcast button{
+        bottom: -20%;
+    }
+
+    .box-text .txt.gravaçoes button{
+        bottom: -14%;
+    }
+}
+
+.formulario{
+    display: grid;
+    margin: 20px auto;
+    width: 80%;
+    height: auto;
+    border: 5px solid var(--cor3);
+    border-radius: 10px;
+    transition: .3s ease-in-out;
+    transform: scale(0); 
+    overflow: hidden;
+}
+
+.formulario.active{
+    transform: scale(1);
+}
+
+.icon{
+    position: absolute;
+    right: 0;
+    border-bottom-left-radius: 10px;
+    padding: 5px;
+    font-size: 2rem;
+    background-color: var(--cor2);
+    cursor: pointer;
+}
+
+.formulario h1{
+    margin: 15px;
+    font-style: italic;
+    font-weight: 100;
+    font-size: 3rem;
+    color: #fff;
+    text-align: center;
+}
+
+.input-box{
+    display: flex;
+    width: 100%;
+    height: 80px;
+    margin: 25px 0;
+    padding: 30px;
+    color: #fff;
+}
+
+.input-box .txt, 
+.input-box .data{
+    height: 45px;
+    width: 50%;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin:15px;
+    padding: 0 15px;
+}
+
+.btn-enviar{
+    height: 45px;
+    width: 20%;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin:15px;
+    padding: 0 15px;
+    background-color: rgba(60, 60, 253, 0.726);
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-enviar:hover{
+    background-color: #5544ff;
+}
+
+.input-box h1{
+    margin: 15px;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.input-box select{
+    height: 40px;
+    margin-top: 20px;
+    padding: 3px;
+    border-radius: 10px;
+    font-size: 17px;
+    font-style: italic;
+}
+
+
+
+@media (max-width: 700px){
+    .formulario h1{
+        font-size: 2.5rem;
+    }
+   
+    .input-box h1{
+        margin: 15px 5px;
+        font-size: 20px;
+    }
+
+    .input-box .btn-enviar{
+        width: 30%;
+    }
+}
+
+@media (max-width: 435px){
+    .formulario h1{
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .input-box h1{
+        font-size: 1rem;
+    }
+
+    .input-box{
+        width: 90%;
+    }
+
+   .input-box select{
+        width: 40%;
+   }
+
+    .input-box .btn-enviar{
+        width: 40%;
+    }
+}

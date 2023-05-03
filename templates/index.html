@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/icone/favicon.ico" type="image/x-icon">
+    <title>Agendamento de Equipamentos</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <header class="nav">
+        <div class="nav-item">
+            <h1>Agendamento de Equipamentos</h1>
+            <p>Selecione um modo para continuar!</p>
+        </div>
+        <div class="nav-item">
+            <ul class="nav-list">
+                <li class="list-item">
+                    <button id="podcast">Podcasts</button>
+                </li>
+                <li class="list-item">
+                   <button id="gravaçoes">Gravações</button>
+                </li>
+                <li class="list-item">
+                    <button id="entrevistas">Entrevistas</button>
+                </li>
+                <li class="list-item">
+                    <button id="perso">Personalizado</button>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <article>
+        <div class="box-text">
+            <span class="icon-box-txt">
+                <ion-icon name="close-outline"></ion-icon>
+            </span>
+
+            <div id="pod" class="txt podcast">
+                <h1>Podcasts</h1>
+                <p>Nesse modo já deixamos tudo que você precisa para fazer um podcast pré-selecionado, mas caso você queira algo a mais é possível selecionar. Para fazer um podcast são necessários apenas microfones e gravadores de áudio</p>
+                <button class="btn-pod">Quero fazer um podcast!</button>
+            </div>
+            <div id="grav" class="txt gravaçoes">
+                <h1>Gravações</h1>
+                <p>Nesse modo já deixamos tudo que você precisa parar fazer uma sessão de gravação pré-selecionado. Para fazer uma gravação é necessario 1 ou 2 camêras e seus devidos cabos e lentes, tripé ou monopé caso queira uma filmagem sem muito movimento e mais estabilizada, e também as iluminações</p>
+                <button class="btn-grav">Quero fazer uma gravação!</button>
+            </div>
+            <div id="entr" class="txt entrevistas">
+                <h1>Entrevistas</h1>
+                <p>Nesse modo já deixamos tudo que você precisa parar fazer uma gravação pré-selecionado. Para fazer uma entrevista é necessário as câmeras e microfones para captação de áudio e vídeo, e os tripés para uma filmagem mais estabilizada</p>
+                <button class="btn-entr">Quero fazer uma entrevista!</button>
+            </div>
+            <div id="per" class="txt perso">
+                <h1>Personalizado</h1>
+                <p>Nesse modo você pode escolher cada coisa do jeito que você achar melhor para a sua idéia</p>
+                <button class="btn-perso">Quero fazer do meu jeito!</button>
+            </div>
+        </div>
+        <form method="POST" enctype="multipart/form-data" class="formulario">
+            <span class="icon">
+                <ion-icon name="close-outline"></ion-icon>
+            </span>
+            <h1>Do que precisamos?</h1>
+            <div class="input-box">
+                <label for="name"><h1>Nome:</h1></label> 
+
+                <input class="txt" type="text" name="name" id="name" placeholder="Digite seu nome aqui" required>
+            </div>
+
+            <div class="input-box">
+               <label for="escola"><h1>Para qual escola?</h1></label> 
+
+                <select name="escola" id="escola" required>
+                    <option value="None">
+                        --Select--
+                    </option>
+                    <option value="Clotilde Barraquet">
+                        Clotilde Barraquet
+                    </option>
+                    <option value="Edson Luiz">
+                        Edson Luiz
+                    </option>
+                    <option value="Padre Silva">
+                        Padre silva
+                    </option>
+                    <option value="João Herrmann">
+                        João Herrmann
+                    </option>
+                    <option value="Leão Vallerie">
+                        Leão Vallerie
+                    </option>
+                    <option value="Melico Candido">
+                        Melico Candido
+                    </option>
+                    <option value="Sylvia Simões">
+                        Sylvia Simões
+                    </option>
+                </select>
+            </div>
+
+            <div class="input-box data">
+               <label for="inicio"><h1>Data de início:</h1></label>
+
+                <label for="inicio"></label>
+                <input class="data" type="date" name="inicio" id="inicio" required>
+            </div>
+
+            <div class="input-box">
+                <label for="termino"><h1>Data de término:</h1></label>
+
+                <label for="termino"></label>
+                <input class="data" type="date" name="termino" id="termino" required>
+            </div>
+
+            <div class="input-box">
+               <label for="periodo"><h1>Período:</h1></label>
+
+               <select name="periodo" id="periodo" required>
+                <option value="None">
+                    --Select--
+                </option>
+                <option value="Manhã">
+                    Manhã
+                </option>
+                <option value="Tarde">
+                    Tarde
+                </option>
+                <option value="Noite">Noite</option>
+               </select>   
+            </div>
+
+            <div class="input-box">
+                <label for="cameras"><h1>Câmeras:</h1></label>
+
+                    <select name="cameras" id="cameras" required>
+                        <option value="None">
+                            Não é necessário
+                        </option>
+                        <option value="Canon SL3">
+                            Canon SL3
+                        </option>
+                        <option value="Nikon Z7">
+                            Nikon Z7
+                        </option>
+                    </select>
+            </div>
+
+            <div class="input-box">
+              <label for="lentes"><h1>Lentes:</h1></label>
+
+              <select name="lentes" id="lentes" required>
+                <option value="None">
+                    Não é necessário
+                </option>
+                <option value="Lente Canon 50mm">
+                    Lente Canon 50mm
+                </option>
+                <option value="Lente Nikon">
+                    Lente Nikon 40mm
+                </option>
+              </select>
+
+                    
+            </div>
+
+            <div class="input-box">
+               <label for="tripes"><h1>Tripé:</h1></label> 
+
+                    <select name="tripes" id="tripes" required>
+                        <option value="None">
+                            Não é necessário
+                        </option>
+                        <option value="Tripe">
+                            Tripé
+                        </option>
+                        <option value="Monopé">
+                            Monopé
+                        </option>
+                    </select>
+            </div>
+
+            <div class="input-box">
+                <label for="microfones"><h1>Microfones:</h1></label>
+
+                 <select name="microfones" id="microfones" required>
+                    <option value="None">
+                        Não é necessário
+                    </option>
+                    <option value="Boya">
+                        Boya
+                    </option>
+                    <option value="Rode">
+                        Rode
+                    </option>
+                    <option value="Sennheiser">
+                        Sennheiser
+                    </option>
+                 </select>
+            </div>
+
+            <div class="input-box">
+                <label for="iluminacoes"><h1>Iluminação:</h1></label>
+
+                <select name="iluminacoes" id="iluminacoes" required>
+                    <option value="None">
+                        Não é necessário
+                    </option>
+                    <option value="Iluminador LED">
+                        Iluminador LED
+                    </option>
+                    <option value="Guarda-chuva">
+                        Guarda-chuva
+                    </option>
+                    <option value="softbox">
+                        Softbox
+                    </option>
+                </select>
+               
+            </div>
+
+            <div class="input-box">
+                <label for="cabos">
+                <h1>Cabos:</h1>
+                </label>
+
+                <select name="cabos" id="cabos" required>
+                    <option value="None">
+                        Não é necessário
+                    </option>
+                    <option value="HDMI">
+                        HDMI
+                    </option>
+                    <option value="Cabo XLR">
+                        Cabo XLR
+                    </option>
+                    <option value="Cabo P10">
+                        Cabo P10
+                    </option>
+                    <option value="Cabo P2">
+                        Cabo P2
+                    </option>
+                    <option value="Outro">
+                        Outro
+                    </option>
+                </select>                   
+            </div>
+
+            <div class="input-box">
+            <label for="obs"><h1>Observações:</h1></label>
+            <input class="txt obs" type="text" name='obs' id="obs" placeholder="Digite sua observação">
+            </div> 
+
+            <div class="input-box">
+            <button type="submit" class="btn-enviar">Enviar</button>
+            </div>
+        </form>
+    </article>
+
+
+
+    <script src="../static/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

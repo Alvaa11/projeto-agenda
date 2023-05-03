@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,200;1,300&display=swap');
+
+:root{
+    --cor1: #C49CE6;
+    --cor2: #A89FFC;
+    --cor3: #FC9FFB;
+    --cordefundo: #042940;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--cordefundo);
+}
+
+.agradecimento {
+    color: #fff;
+    text-align: center;
+    width: 500px;
+}
+
+.agradecimento h1 {
+    font-size: 2rem;
+    font-weight: 200;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.agradecimento p{
+    font-size: 1.5rem;
+    line-height: 35px;
+    margin-bottom: 27px;
+}
+
+.agradecimento button{
+    background-color: #3428a8;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    transition: .3s;
+}
+
+.agradecimento button:hover{
+    background-color: #3528a8a9;
+}
+
+.agradecimento a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
